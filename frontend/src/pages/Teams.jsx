@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { teams, POOL_VENUES } from '../data/teams';
 import styles from './Teams.module.css';
 
@@ -6,6 +7,7 @@ const POOLS = ['全部', 'A', 'B', 'C', 'D'];
 
 export default function Teams() {
   const [activePool, setActivePool] = useState('全部');
+  const navigate = useNavigate();
 
   const filtered = activePool === '全部'
     ? teams
@@ -14,7 +16,7 @@ export default function Teams() {
   return (
     <main className={`container ${styles.page}`}>
       <h1 className={styles.title}>參賽隊伍</h1>
-      <p className={styles.subtitle}>2026 WBC 共 20 支國家/地區隊伍參賽</p>
+      <p className={styles.subtitle}>2026 WBC 共 20 支國家/地區隊伍參賽，點擊隊伍查看球員名單</p>
 
       {/* Filter tabs */}
       <div className={styles.tabs}>
@@ -37,7 +39,14 @@ export default function Teams() {
       {/* Team grid */}
       <div className={styles.grid}>
         {filtered.map((team) => (
-          <div key={team.id} className={styles.card}>
+          <div
+            key={team.id}
+            className={`${styles.card} ${styles.cardClickable}`}
+            onClick={() => navigate(`/teams/${team.code}`)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && navigate(`/teams/${team.code}`)}
+          >
             <div className={styles.cardFlag}>{team.flag}</div>
             <div className={styles.cardInfo}>
               <div className={styles.cardName}>{team.nameZh}</div>
@@ -49,6 +58,7 @@ export default function Teams() {
                 )}
               </div>
             </div>
+            <div className={styles.cardArrow}>查看球員 →</div>
           </div>
         ))}
       </div>
