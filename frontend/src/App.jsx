@@ -9,7 +9,7 @@ import styles from './App.module.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/HW">
       <div className={styles.layout}>
         <Navbar />
         <div className={styles.content}>
