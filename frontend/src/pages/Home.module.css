@@ -1,0 +1,189 @@
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #001840 0%, #0a0e1a 50%, #1a0a00 100%);
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroContent {
+  text-align: center;
+}
+
+.heroEyebrow {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.heroHighlight {
+  color: var(--color-secondary);
+}
+
+.heroSub {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 0.75rem 2rem;
+  background: var(--color-secondary);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.btnPrimary:hover { opacity: 0.85; }
+
+.btnSecondary {
+  padding: 0.75rem 2rem;
+  background: var(--color-surface2);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  transition: background 0.2s;
+}
+.btnSecondary:hover { background: #2a3558; }
+
+/* Stats */
+.stats {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 2rem 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Section */
+.section {
+  padding: 4rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-secondary);
+  display: inline-block;
+}
+
+/* Pools */
+.poolsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .poolsGrid { grid-template-columns: 1fr; }
+}
+
+.poolCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.poolHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.poolA .poolHeader { background: #0d2040; border-bottom: 2px solid #2a6abf; }
+.poolB .poolHeader { background: #2a0d0d; border-bottom: 2px solid #bf2a2a; }
+.poolC .poolHeader { background: #0d2a1a; border-bottom: 2px solid #2abf5a; }
+.poolD .poolHeader { background: #2a1e0d; border-bottom: 2px solid #bf882a; }
+
+.poolLabel {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.poolVenue {
+  color: var(--color-text-muted);
+}
+
+.poolTeams {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.poolTeamRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s;
+}
+
+.poolTeamRow:last-child { border-bottom: none; }
+.poolTeamRow:hover { background: var(--color-surface2); }
+
+.moreLink {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btnOutline {
+  padding: 0.65rem 1.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btnOutline:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
