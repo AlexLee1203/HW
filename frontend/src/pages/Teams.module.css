@@ -79,6 +79,22 @@
   transform: translateY(-2px);
 }
 
+.cardClickable {
+  cursor: pointer;
+}
+
+.cardArrow {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cardClickable:hover .cardArrow {
+  opacity: 1;
+}
+
 .cardFlag {
   font-size: 3rem;
   line-height: 1;
